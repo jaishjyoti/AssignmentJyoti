@@ -9,7 +9,6 @@ public class AmazonFunctionalityTest extends BaseTest {
     public void amazonLoginWithCredential() {
         test.amazonLoginPage.amazonLoginWithCredential();
     }
-
     @Test(dependsOnMethods = "amazonLoginWithCredential")
     public void amazonTestClass() throws InterruptedException {
         test.amazonHomePage.searchProducts("mac laptop");

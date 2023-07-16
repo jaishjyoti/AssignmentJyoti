@@ -7,11 +7,9 @@ import org.openqa.selenium.interactions.Actions;
 
 public class AmazonLogOutPage {
     WebDriver driver;
-
     public AmazonLogOutPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void logOut() throws InterruptedException {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.xpath("//span[text()='Account & Lists']"))).perform();

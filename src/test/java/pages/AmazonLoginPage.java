@@ -7,11 +7,9 @@ import org.openqa.selenium.WebElement;
 public class AmazonLoginPage {
 
     WebDriver driver;
-
     public AmazonLoginPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void amazonLoginWithCredential() {
         WebElement singInBtn = driver.findElement(By.xpath("//a[@data-nav-ref='nav_custrec_signin']"));
         singInBtn.isDisplayed();

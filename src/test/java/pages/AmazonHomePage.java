@@ -9,11 +9,9 @@ import java.util.Set;
 
 public class AmazonHomePage {
     WebDriver driver;
-
     public AmazonHomePage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void searchProducts(String searchItem) {
         WebElement searchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
         searchBox.isDisplayed();
@@ -22,14 +20,12 @@ public class AmazonHomePage {
         searchBtn.isDisplayed();
         searchBtn.click();
     }
-
     public void printAllTheProducts() {
         List<WebElement> products = driver.findElements(By.xpath("//h2[contains(@class,'a-size-mini a-spacing-none a-color-base s-line-clamp')]//span"));
         for (WebElement element : products) {
             System.out.println("Searched Item on page: --" + element.getText());
         }
     }
-
     public String addProductToCart() throws InterruptedException {
         WebElement firstItemOnSearch = driver.findElement(By.xpath("(//h2[contains(@class,'a-size-mini a-spacing-none a-color-base s-line-clamp')]//span)[1]"));
         firstItemOnSearch.isDisplayed();
@@ -50,7 +46,6 @@ public class AmazonHomePage {
         String itemAddedToCart = driver.findElement(By.xpath("(//h4[text()='Added to Cart'])[2]")).getText();
         return itemAddedToCart;
     }
-
     public boolean updateProduct() {
         WebElement viewCartBtn = driver.findElement(By.xpath("//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']"));
         viewCartBtn.isDisplayed();
@@ -65,7 +60,6 @@ public class AmazonHomePage {
         }
         return false;
     }
-
     public String deleteTheProduct() throws InterruptedException {
         Thread.sleep(2000);
         WebElement deleteItemBtn = driver.findElement(By.xpath("//input[@data-action='delete']"));
