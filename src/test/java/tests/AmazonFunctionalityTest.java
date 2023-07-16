@@ -4,7 +4,7 @@ import BasePage.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AmazonTestClass extends BaseTest {
+public class AmazonFunctionalityTest extends BaseTest {
     @Test
     public void amazonLoginWithCredential() {
         test.amazonLoginPage.amazonLoginWithCredential();
